@@ -19,11 +19,13 @@ html { scroll-behavior: smooth; }
   --teal: #1a8a7a;
   --gold: #d4a027;
   --blue: #2c6fad;
+  --navy: #1B3A5C;
+  --purple: #7c4daa;
+  --green: #2e7d52;
   --r: 10px;
 }
 body { font-family: 'Epilogue', sans-serif; background: var(--off-white); color: var(--ink); line-height: 1.6; }
 
-/* NAV */
 nav {
   position: sticky; top: 0; z-index: 50;
   background: rgba(249,248,246,0.92); backdrop-filter: blur(12px);
@@ -32,82 +34,55 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); text-decoration: none; }
-.nav-cta {
-  font-size: 13px; font-weight: 600; color: var(--white);
-  background: var(--ink); padding: 8px 18px; border-radius: 100px;
-  text-decoration: none; transition: opacity 0.15s;
-}
+.nav-cta { font-size: 13px; font-weight: 600; color: var(--white); background: var(--ink); padding: 8px 18px; border-radius: 100px; text-decoration: none; transition: opacity 0.15s; }
 .nav-cta:hover { opacity: 0.75; }
 
-/* HERO */
-.hero { max-width: 760px; margin: 0 auto; padding: 80px 40px 64px; }
+.hero { max-width: 900px; margin: 0 auto; padding: 80px 40px 64px; }
 .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin-bottom: 18px; }
 h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 20px; }
 h1 em { font-style: italic; color: var(--ink-light); }
 .hero-sub { font-size: 17px; font-weight: 300; color: var(--ink-light); max-width: 520px; line-height: 1.7; }
 
-/* CRED BAR */
-.cred-bar {
-  display: flex; align-items: center; flex-wrap: wrap; gap: 20px;
-  margin-top: 36px; padding: 20px 24px;
-  background: var(--white); border: 1px solid var(--border); border-radius: var(--r);
-}
+.cred-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 36px; padding: 20px 24px; background: var(--white); border: 1px solid var(--border); border-radius: var(--r); }
 .cred { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.5; flex: 1; min-width: 180px; }
 .cred small { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-light); }
 .cred-icon { font-size: 22px; flex-shrink: 0; }
 .cred-divider { width: 1px; height: 36px; background: var(--border); flex-shrink: 0; }
 
-hr { border: none; border-top: 1px solid var(--border); max-width: 760px; margin: 0 auto 56px; }
+hr { border: none; border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto 56px; }
+.section-label { max-width: 900px; margin: 0 auto 28px; padding: 0 40px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); }
 
-.section-label { max-width: 760px; margin: 0 auto 28px; padding: 0 40px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); }
+.cards { max-width: 900px; margin: 0 auto; padding: 0 40px 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-/* CARDS */
-.cards { max-width: 760px; margin: 0 auto; padding: 0 40px 100px; display: flex; flex-direction: column; gap: 16px; }
-
-.card {
-  background: var(--white); border: 1px solid var(--border); border-radius: var(--r);
-  display: grid; grid-template-columns: 5px 1fr auto; align-items: stretch;
-  text-decoration: none; color: inherit; overflow: hidden;
-  opacity: 0; transform: translateY(16px);
-  transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.2s ease;
-}
+.card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); display: grid; grid-template-columns: 5px 1fr; align-items: stretch; text-decoration: none; color: inherit; overflow: hidden; opacity: 0; transform: translateY(16px); transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.2s ease; }
 .card.visible { opacity: 1; transform: translateY(0); }
 .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); transform: translateY(-2px) !important; }
 
 .card-stripe { width: 5px; flex-shrink: 0; }
-.stripe-coral { background: var(--coral); }
-.stripe-teal  { background: var(--teal); }
-.stripe-gold  { background: var(--gold); }
-.stripe-blue  { background: var(--blue); }
+.stripe-coral  { background: var(--coral); }
+.stripe-teal   { background: var(--teal); }
+.stripe-gold   { background: var(--gold); }
+.stripe-blue   { background: var(--blue); }
+.stripe-navy   { background: var(--navy); }
+.stripe-purple { background: var(--purple); }
+.stripe-green  { background: var(--green); }
 
-.card-content { padding: 24px 28px 24px 24px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card-content { padding: 22px 22px 22px 20px; display: flex; flex-direction: column; gap: 6px; position: relative; }
 .card-meta { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
-.card-title { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--ink); line-height: 1.25; }
-.card-desc { font-size: 14px; font-weight: 300; color: var(--ink-light); line-height: 1.65; max-width: 480px; margin-top: 2px; }
-
-.card-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.chip { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); background: var(--off-white); color: var(--ink-light); letter-spacing: 0.02em; }
-.chip-coral { background: #fef0ed; color: var(--coral); border-color: #f5c5bb; }
-.chip-teal  { background: #e8f5f3; color: var(--teal);  border-color: #b0ddd8; }
-.chip-gold  { background: #fdf5e4; color: var(--gold);  border-color: #e8d09a; }
-.chip-blue  { background: #e8f0f9; color: var(--blue);  border-color: #b0c8e8; }
-
-.card-arrow-col { display: flex; align-items: center; padding: 0 24px; border-left: 1px solid var(--border); }
-.card-arrow { font-size: 20px; color: var(--ink-light); transition: transform 0.15s ease, color 0.15s ease; }
+.card-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+.card-desc { font-size: 13.5px; font-weight: 300; color: var(--ink-light); line-height: 1.65; margin-top: 2px; flex: 1; }
+.card-arrow { position: absolute; bottom: 20px; right: 20px; font-size: 16px; color: var(--ink-light); transition: transform 0.15s, color 0.15s; }
 .card:hover .card-arrow { transform: translateX(4px); color: var(--ink); }
 
-/* FOOTER */
 footer { text-align: center; padding: 0 40px 60px; font-size: 13px; color: var(--ink-light); font-weight: 300; }
 footer a { color: var(--ink); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--border); }
 footer a:hover { border-color: var(--ink); }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   nav { padding: 0 20px; }
   .hero { padding: 56px 20px 48px; }
   .section-label { padding: 0 20px; }
-  .cards { padding: 0 20px 80px; }
-  .card-arrow-col { display: none; }
-  .card-content { padding: 20px; }
+  .cards { padding: 0 20px 80px; grid-template-columns: 1fr; }
   .cred-divider { display: none; }
   footer { padding: 0 20px 48px; }
 }
@@ -143,7 +118,6 @@ footer a:hover { border-color: var(--ink); }
 </section>
 
 <hr />
-
 <div class="section-label">Selected Work</div>
 
 <div class="cards">
@@ -151,15 +125,11 @@ footer a:hover { border-color: var(--ink); }
   <a class="card" href="https://alittle.agency" target="_blank">
     <div class="card-stripe stripe-coral"></div>
     <div class="card-content">
-      <div class="card-meta">Web · AI Consulting Practice</div>
+      <div class="card-meta">Web · AI Consulting</div>
       <div class="card-title">A Little Agency</div>
-      <div class="card-desc">Full brand and web presence for my independent practice. Positioned for enterprise and public sector clients — AI workflow automation, data architecture, and systems integration delivered at boutique speed.</div>
-      <div class="card-chips">
-        <span class="chip chip-coral">AI Consulting</span>
-        <span class="chip">Atlanta, GA</span>
-      </div>
+      <div class="card-desc">Full brand and web presence for my independent practice — AI workflow automation, data architecture, and systems integration for enterprise and public sector clients.</div>
+      <span class="card-arrow">→</span>
     </div>
-    <div class="card-arrow-col"><span class="card-arrow">→</span></div>
   </a>
 
   <a class="card" href="https://caseclosed-ashy.vercel.app/demos" target="_blank">
@@ -167,28 +137,29 @@ footer a:hover { border-color: var(--ink); }
     <div class="card-content">
       <div class="card-meta">Legal Tech · Web App</div>
       <div class="card-title">Case Closed</div>
-      <div class="card-desc">End-to-end case management platform for solo and small-firm attorneys. Client intake, deadline tracking, document management, and billing — designed from scratch, shipped to production. Demonstrates full-stack product thinking and domain research.</div>
-      <div class="card-chips">
-        <span class="chip chip-teal">Live ↗</span>
-        <span class="chip chip-teal">Legal Tech</span>
-        <span class="chip">Full-Stack</span>
-      </div>
+      <div class="card-desc">End-to-end case management for solo attorneys — client intake, deadlines, documents, and billing. Designed from scratch and shipped to production.</div>
+      <span class="card-arrow">→</span>
     </div>
-    <div class="card-arrow-col"><span class="card-arrow">→</span></div>
   </a>
 
-  <a class="card" href="https://spoonstack.vercel.app/" target="_blank">
-    <div class="card-stripe stripe-gold"></div>
+  <a class="card" href="https://alittleagency.github.io/sugars/" target="_blank">
+    <div class="card-stripe stripe-green"></div>
     <div class="card-content">
-      <div class="card-meta">Accessibility · Human-Centered Design</div>
-      <div class="card-title">SpoonStack</div>
-      <div class="card-desc">A daily capacity planning tool built around Spoon Theory — helping neurodivergent and chronically ill users track energy, triage tasks, and protect their bandwidth. Proof that accessible UX doesn't have to be an afterthought.</div>
-      <div class="card-chips">
-        <span class="chip chip-gold">Accessibility</span>
-        <span class="chip">Human-Centered</span>
-      </div>
+      <div class="card-meta">Health Tech · Mobile App</div>
+      <div class="card-title">Sugars</div>
+      <div class="card-desc">The first diabetes tracker built for the Black community — soul food database, family board, warm and direct with zero lectures. Because no other app knows what oxtail is.</div>
+      <span class="card-arrow">→</span>
     </div>
-    <div class="card-arrow-col"><span class="card-arrow">→</span></div>
+  </a>
+
+  <a class="card" href="https://alittleagency.github.io/cascadecare/" target="_blank">
+    <div class="card-stripe stripe-navy"></div>
+    <div class="card-content">
+      <div class="card-meta">Nonprofit Tech · Web App</div>
+      <div class="card-title">Cascade Care</div>
+      <div class="card-desc">Pastoral care and mental health platform for faith communities — student onboarding, care team coordination, and crisis triage built for a Methodist church.</div>
+      <span class="card-arrow">→</span>
+    </div>
   </a>
 
   <a class="card" href="https://mergeday-production.up.railway.app/" target="_blank">
@@ -196,29 +167,31 @@ footer a:hover { border-color: var(--ink); }
     <div class="card-content">
       <div class="card-meta">Productivity · Web App</div>
       <div class="card-title">MergeDay</div>
-      <div class="card-desc">A unified calendar dashboard for professionals managing work and personal schedules on separate devices — MDM-safe, read-only Google OAuth, automatic conflict detection, and AI-drafted reschedule messages. No install required.</div>
-      <div class="card-chips">
-        <span class="chip chip-blue">Live ↗</span>
-        <span class="chip chip-blue">Calendar Tech</span>
-        <span class="chip">MDM-Safe</span>
-      </div>
+      <div class="card-desc">Unified calendar dashboard for professionals on MDM-managed devices — read-only OAuth, automatic conflict detection, and AI-drafted reschedule messages. No install required.</div>
+      <span class="card-arrow">→</span>
     </div>
-    <div class="card-arrow-col"><span class="card-arrow">→</span></div>
   </a>
-<a class="card" href="https://alittleagency.github.io/cascadecare/" target="_blank">
-    <div class="card-stripe" style="background:#1B3A5C;"></div>
+
+  <a class="card" href="https://spoonstackapp.vercel.app/" target="_blank">
+    <div class="card-stripe stripe-gold"></div>
     <div class="card-content">
-      <div class="card-meta">Nonprofit Tech · Web App</div>
-      <div class="card-title">Cascade Care</div>
-      <div class="card-desc">A pastoral care and mental health platform for faith communities — student onboarding, care team coordination, crisis triage, and congregation engagement built for a Methodist church. Demonstrates product design in a sensitive, compliance-aware domain.</div>
-      <div class="card-chips">
-        <span class="chip" style="background:#e8f0f9;color:#1B3A5C;border-color:#b0c0d8;">Nonprofit Tech</span>
-        <span class="chip">Mental Health</span>
-        <span class="chip">Faith Communities</span>
-      </div>
+      <div class="card-meta">Accessibility · Interactive Tool</div>
+      <div class="card-title">SpoonStack</div>
+      <div class="card-desc">Daily capacity planning built around Spoon Theory — helping neurodivergent and chronically ill users track energy, triage tasks, and protect their bandwidth.</div>
+      <span class="card-arrow">→</span>
     </div>
-    <div class="card-arrow-col"><span class="card-arrow">→</span></div>
   </a>
+
+  <a class="card" href="https://alittleagency.github.io/betterweather/" target="_blank">
+    <div class="card-stripe stripe-purple"></div>
+    <div class="card-content">
+      <div class="card-meta">Consumer · Mobile App</div>
+      <div class="card-title">Better Weather</div>
+      <div class="card-desc">A $2.99 one-time weather app with no ads, no subscription, and no bloat — just weather, minute-by-minute rain timers, and widgets you actually want.</div>
+      <span class="card-arrow">→</span>
+    </div>
+  </a>
+
 </div>
 
 <footer>
@@ -230,7 +203,7 @@ footer a:hover { border-color: var(--ink); }
 const obs = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 120);
+      setTimeout(() => e.target.classList.add('visible'), i * 100);
       obs.unobserve(e.target);
     }
   });
